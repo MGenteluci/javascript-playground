@@ -6,6 +6,7 @@ let win;
 
 function start() {
   win = new BrowserWindow(windowOptions);
+  win.loadFile(`${__dirname}/../../app/public/index.html`);
 
   openChannels();
 }
