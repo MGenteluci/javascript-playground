@@ -1,3 +1,4 @@
+const { ipcRenderer } = require('electron');
 const i18n = require(`../../i18n/${process.env.osLang || 'en_US'}.json`);
 
 const startGameBtn = document.querySelector('.start-game');
@@ -8,6 +9,19 @@ function setInitialTexts() {
   appTitle.textContent = i18n.APP_TITLE;
 }
 
+function startGame(event) {
+  event.preventDefault();
+
+  ipcRenderer.send('start-game');
+}
+
+function startGameReply() {
+  window.location.href = 'questions.html';
+}
+
 (() => {
   setInitialTexts();
+
+  startGameBtn.addEventListener('click', startGame);
+  ipcRenderer.on('start-game-reply', startGameReply);
 })();

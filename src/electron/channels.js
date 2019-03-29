@@ -1,11 +1,11 @@
 const { ipcMain } = require('electron');
 
-function execute() {
-  console.log('started');
+function startGame(event) {
+  event.sender.send('start-game-reply');
 }
 
 function openChannels() {
-  ipcMain.on('main', execute);
+  ipcMain.on('start-game', startGame);
 }
 
 module.exports = {
