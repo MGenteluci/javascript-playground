@@ -6,7 +6,8 @@
       "optionB": "alternative b",
       "optionC": "alternative c",
       "optionD": "alternative d",
-      "answer": "d"
+      "answer": "d",
+      "explanation": "its letter d for this reason: bla bla"
     }
   ]
 }

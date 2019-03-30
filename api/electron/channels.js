@@ -11,9 +11,16 @@ function getQuestion(event) {
   event.sender.send('get-question-reply', question);
 }
 
+function validateAnswer(event, answer) {
+  const isCorrect = Game.isAnswerCorrect(answer);
+
+  event.sender.send('answer-question-reply', isCorrect);
+}
+
 function openChannels() {
   ipcMain.on('start-game', startGame);
   ipcMain.on('get-question', getQuestion);
+  ipcMain.on('answer-question', validateAnswer);
 }
 
 module.exports = {
