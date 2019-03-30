@@ -33,7 +33,6 @@
     "no-var": "error",
     "object-shorthand": "error",
     "quote-props": ["error", "as-needed"],
-    "prefer-destructuring": "error",
     "prefer-template": "error",
     "template-curly-spacing": "error",
     "prefer-rest-params": "error",

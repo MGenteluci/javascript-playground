@@ -4,9 +4,61 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Document</title>
+  <title>JavaScript Playground</title>
+
+  <link rel="stylesheet" href="../css/reset.css"/>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="../css/questions.css"/>
 </head>
 <body>
-  <h1>Questions</h1>
+  <div class="header">
+    <h1 class="question-title"></h1>
+  </div>
+
+  <form class="form-question">
+  <div class="answer-options">
+    <div class="input-group">
+      <div class="input-group-prepend">
+        <div class="input-group-text">
+          <input type="radio" class="option-a" name="answer" value="a">
+        </div>
+      </div>
+      <input type="text" class="form-control text-option-a">
+    </div>
+
+    <div class="input-group">
+      <div class="input-group-prepend">
+        <div class="input-group-text">
+          <input type="radio" class="option-b" name="answer" value="b">
+        </div>
+      </div>
+      <input type="text" class="form-control text-option-b">
+    </div>
+
+    <div class="input-group">
+      <div class="input-group-prepend">
+        <div class="input-group-text">
+          <input type="radio" class="option-c" name="answer" value="c">
+        </div>
+      </div>
+      <input type="text" class="form-control text-option-c">
+    </div>
+
+    <div class="input-group">
+      <div class="input-group-prepend">
+        <div class="input-group-text">
+          <input type="radio" class="option-d" name="answer" value="d">
+        </div>
+      </div>
+      <input type="text" class="form-control text-option-d">
+    </div>
+  </div>
+
+  <div class="done">
+    <button type="button" class="btn btn-primary send-btn">Enviar</button>
+  </div>
+  </form>
+
+  <script src="../js/questions.js"></script>
 </body>
 </html>
