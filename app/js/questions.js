@@ -1,7 +1,13 @@
 const { ipcRenderer } = require('electron');
+const i18n = require(`../../i18n/${process.env.osLang || 'en_US'}.json`);
 
+const sendAnswerBtn = document.querySelector('.send-btn');
 const formQuestion = document.querySelector('.form-question');
 const currentQuestion = {};
+
+function setInitialTexts() {
+  sendAnswerBtn.textContent = i18n.SEND_ANSWER_BUTTON;
+}
 
 function createQuestion(event, question) {
   Object.assign(currentQuestion, question);
@@ -43,11 +49,12 @@ function presentResult(event, result) {
 }
 
 (() => {
+  setInitialTexts();
+
   ipcRenderer.on('get-question-reply', createQuestion);
   getQuestion();
 
   ipcRenderer.on('answer-question-reply', presentResult);
 
-  document.querySelector('.send-btn')
-    .addEventListener('click', answerQuestion);
+  sendAnswerBtn.addEventListener('click', answerQuestion);
 })();
