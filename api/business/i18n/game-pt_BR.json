@@ -1,13 +1,22 @@
 {
   "questions": [
     {
-      "title": "Question 1",
-      "optionA": "alternative a",
-      "optionB": "alternative b",
-      "optionC": "alternative c",
-      "optionD": "alternative d",
-      "answer": "d",
-      "explanation": "its letter d for this reason: bla bla"
+      "title": "Boolean(0) === ?",
+      "optionA": "undefined",
+      "optionB": "false",
+      "optionC": "true",
+      "optionD": "0",
+      "answer": "b",
+      "explanation": "0 é considerado falso pelo javascript, portanto um wrapper de Boolean em cima do valor retorna false"
+    },
+    {
+      "title": "Boolean(-1) === ?",
+      "optionA": "undefined",
+      "optionB": "false",
+      "optionC": "true",
+      "optionD": "0",
+      "answer": "c",
+      "explanation": "Para o JavaScript números negativos são considerados verdadeiros, portanto um wrapper de Boolean em cima do valor retorna true"
     }
   ]
 }

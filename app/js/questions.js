@@ -38,8 +38,8 @@ function answerQuestion(event) {
 }
 
 function presentResult(event, result) {
-  if (result) window.alert('voce acertou');
-  else window.alert('voce errou');
+  if (result) window.alert('Resposta correta');
+  else window.alert(currentQuestion.explanation);
 }
 
 (() => {
