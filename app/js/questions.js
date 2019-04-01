@@ -2,11 +2,17 @@ const { ipcRenderer } = require('electron');
 const i18n = require(`../../i18n/${process.env.osLang || 'en_US'}.json`);
 
 const sendAnswerBtn = document.querySelector('.send-btn');
+const endGameBtn = document.querySelector('.end-game');
+const nextQuestionBtn = document.querySelector('.next-question');
+
 const formQuestion = document.querySelector('.form-question');
+
 const currentQuestion = {};
 
 function setInitialTexts() {
   sendAnswerBtn.textContent = i18n.SEND_ANSWER_BUTTON;
+  endGameBtn.textContent = i18n.END_GAME_BUTTON;
+  nextQuestionBtn.textContent = i18n.NEXT_QUESTION_BUTTON;
 }
 
 function createQuestion(event, question) {
@@ -43,9 +49,32 @@ function answerQuestion(event) {
   ipcRenderer.send('answer-question', answer);
 }
 
+function renderPostAnswerButtons() {
+  document.querySelector('.done').classList.add('hidden');
+  document.querySelector('.post-answer').classList.remove('hidden');
+}
+
+function displayAlert(hiddenAlert) {
+  hiddenAlert.classList.remove('hidden');
+}
+
+function renderCorrectAnswer() {
+  const alertText = document.querySelector('.alert');
+  alertText.classList.add('alert-success');
+  alertText.textContent = 'Resposta Correta!';
+  displayAlert(alertText);
+}
+
+function renderWrongAnswer() {
+  const alertText = document.querySelector('.alert');
+  alertText.classList.add('alert-danger');
+  alertText.textContent = `Correção:\n${currentQuestion.explanation}`;
+  displayAlert(alertText);
+}
+
 function presentResult(event, result) {
-  if (result) window.alert('Resposta correta');
-  else window.alert(currentQuestion.explanation);
+  renderPostAnswerButtons();
+  return result ? renderCorrectAnswer() : renderWrongAnswer();
 }
 
 (() => {

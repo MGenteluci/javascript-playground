@@ -8,3 +8,11 @@
   text-align: center;
   padding-top: 20px;
 }
+
+.hidden {
+  display: none;
+}
+
+.post-answer {
+  text-align: center;
+}

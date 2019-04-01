@@ -1,5 +1,7 @@
 {
   "APP_TITLE": "JavaScript Playground",
   "START_GAME_BUTTON": "Iniciar Jogo",
-  "SEND_ANSWER_BUTTON": "Enviar"
+  "SEND_ANSWER_BUTTON": "Enviar",
+  "END_GAME_BUTTON": "Sair",
+  "NEXT_QUESTION_BUTTON": "Próxima"
 }
