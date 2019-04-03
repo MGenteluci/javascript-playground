@@ -1,22 +1,22 @@
 const game = require(`./i18n/game-${process.env.osLang || 'en_US'}.json`);
 
-const questions = game.questions;
-
-function getRandomIndex() {
+function getRandomIndex(questions = game.questions) {
   return Math.floor(Math.random() * questions.length);
 }
 
-function getRandomQuestion() {
+function getRandomQuestion(questions = game.questions) {
   return questions[getRandomIndex()];
 }
 
 function isAnswerCorrect({ title, choice }) {
-  const question = questions.find(question => question.title === title);
+  const question = game.questions.find(question => question.title === title);
 
   return question.answer === choice;
 }
 
 module.exports = {
   getRandomQuestion,
-  isAnswerCorrect
+  isAnswerCorrect,
+  // Exported only for test
+  getRandomIndex
 };

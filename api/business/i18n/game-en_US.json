@@ -1,0 +1,22 @@
+{
+  "questions": [
+    {
+      "title": "Boolean(0) === ?",
+      "optionA": "undefined",
+      "optionB": "false",
+      "optionC": "true",
+      "optionD": "0",
+      "answer": "b",
+      "explanation": "0 is false to javascript, therefore a boolean wrapper on 0 returns false"
+    },
+    {
+      "title": "Boolean(-1) === ?",
+      "optionA": "undefined",
+      "optionB": "false",
+      "optionC": "true",
+      "optionD": "0",
+      "answer": "c",
+      "explanation": "JavaScript considers that numbers smaller than 0 are true, therefore a boolean wrapper on -1 returns true"
+    }
+  ]
+}

@@ -8,7 +8,9 @@
     "test": true,
     "expect": true,
     "document": true,
-    "window": true
+    "window": true,
+    "afterEach": true,
+    "jest": true
   },
   "parserOptions": {
     "ecmaVersion": 2017
@@ -58,11 +60,14 @@
     "no-multiple-empty-lines": ["error", { "max": 1 }],
     "camelcase": "error",
     "no-multi-spaces": "error",
-    "newline-per-chained-call": ["error", { "ignoreChainWithDepth": 1 }],
+    "newline-per-chained-call": ["error", { "ignoreChainWithDepth": 2 }],
     "no-shadow-restricted-names": "error",
     "global-require": "error",
     "no-mixed-requires": "error",
-    "max-len": ["error", { "code": 80 }],
+    "max-len": ["error", {
+      "code": 80,
+      "ignoreStrings": true
+    }],
     "no-cond-assign": ["error", "always"],
     "no-duplicate-case": "error",
     "no-duplicate-imports": "error"
