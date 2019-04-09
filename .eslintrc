@@ -4,13 +4,13 @@
     "es6": true
   },
   "globals": {
+    "jest": true,
     "describe": true,
-    "test": true,
+    "afterEach": true,
+    "it": true,
     "expect": true,
     "document": true,
-    "window": true,
-    "afterEach": true,
-    "jest": true
+    "window": true
   },
   "parserOptions": {
     "ecmaVersion": 2017

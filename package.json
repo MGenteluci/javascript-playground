@@ -26,7 +26,7 @@
   "jest": {
     "verbose": true,
     "moduleNameMapper": {
-      "^electron$": "<rootDir>/test/mock/electron.js"
+      "^electron$": "<rootDir>/test/unit/mock/electron.js"
     }
   }
 }
